@@ -9,6 +9,7 @@ import {EditBookComponent} from "./edit-book/edit-book.component";
 import {AddBookComponent} from "./add-book/add-book.component";
 import {AuthorDetailComponent} from "./author-detail/author-detail.component";
 import {AddAuthorComponent} from "./add-author/add-author.component";
+import { AuthGuard } from './guards/can-activate.guard';
 
 const routes: Routes = [
 
@@ -20,7 +21,7 @@ const routes: Routes = [
   { path: 'books', component: BookComponent },
   { path: 'authors', component: AuthorComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'register', component: RegisterComponent },
+  { path: 'register', component: RegisterComponent},
 
 
   { path: '', redirectTo: '/books', pathMatch: 'full' },

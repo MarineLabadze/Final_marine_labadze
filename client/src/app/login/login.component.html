@@ -1,4 +1,19 @@
 <h1>login page</h1>
-<!-- missing code -->
-              <button type="button" class="btn btn-secondary" (click)="goToRegister()">Register</button>
+<select class="form-select"  name="" id="">
+    <option>English</option>
+    <option>French</option>
+    <option >ქართული</option>
+    <option >Russian</option>
+</select>
+<form [formGroup]="logInForm" class="login-form">
+    <input class="input-field" type="text" placeholder="username" formControlName="username">
+    
+    <small *ngIf="this.logInForm.get('username')?.invalid && this.logInForm.get('username')?.touched">*Username is required</small>
+    <input class="input-field" type="password" placeholder="Password" formControlName="password">
+    <small *ngIf="this.logInForm.get('password')?.invalid && this.logInForm.get('password')?.touched">*Password is required</small>
+    
+ 
+    <button class="submit-button" type="submit" (click)="Login()" [disabled]="logInForm.invalid">Sign In</button>
+</form>
+              <button type="button" class="btn btn-secondary" (click)="goToRegister()" >Go to Register</button>
 
